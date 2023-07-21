@@ -1,0 +1,8 @@
+{
+  "ipcp_data" : {
+      "type" : "normal-ipc",
+      "dif_name" : "slice1",
+      "template" : "management-terminet.dif",
+      "registrations" : ["10"]
+   }
+}

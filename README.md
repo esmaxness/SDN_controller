@@ -17,30 +17,24 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+This example depends on [IRATI Project](https://github.com/IRATI/stack) and RINA SBI Driver.
+
+First, it is highly recommended to install IRATI stack in the same system that this example are going to run. To do so, the [IRATI Project](https://github.com/IRATI/stack) describes the steps to install IRATI. 
+
+Finally, it is necessary to install the RINA SBI Driver using the rina_driver wheel available at [IRATI Project](https://github.com/esmaxness/RINA_Driver)
 
 ```
-Give examples
+pip install rina-0.0.3-py3-none-any.whl
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
+1. Clone this repository in the same system with [IRATI Project](https://github.com/IRATI/stack)
+2. Create a folder with the DIF templates.
 ```
-Give the example
+sudo mkdir /tmp/DifTemplates
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
 
 ## Usage <a name = "usage"></a>
 
-Add notes about how to use the system.
+1. Crea

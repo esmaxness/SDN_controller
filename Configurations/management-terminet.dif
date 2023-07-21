@@ -1,0 +1,246 @@
+{
+    "difType" : "normal-ipc",
+    "dataTransferConstants" : {
+        "addressLength" : 1,
+        "cepIdLength" : 1,
+        "lengthLength" : 2,
+        "portIdLength" : 1,
+        "qosIdLength" : 1,
+        "rateLength" : 4,
+        "frameLength" : 4,
+        "sequenceNumberLength" : 4,
+        "ctrlSequenceNumberLength" : 4,
+        "maxPduSize" : 1470,
+        "maxPduLifetime" : 60000,
+        "difFragmentation" : true,
+        "maxSduSize" : 10000
+    },
+    "qosCubes" : [ {
+         "name" : "unreliablewithflowcontrol",
+         "id" : 1,
+         "partialDelivery" : false,
+         "orderedDelivery" : true,
+         "efcpPolicies" : {
+              "dtpPolicySet" : {
+                "name" : "default",
+                "version" : "0"
+              },
+              "initialATimer" : 0,
+              "dtcpPresent" : true,
+              "dtcpConfiguration" : {
+                   "dtcpPolicySet" : {
+                     "name" : "default",
+                     "version" : "0"
+                   },
+                   "rtxControl" : false,
+                   "flowControl" : true,
+                   "flowControlConfig" : {
+                       "rateBased" : false,
+                       "windowBased" : true,
+                       "windowBasedConfig" : {
+                         "maxClosedWindowQueueLength" : 20,
+                         "initialCredit" : 150
+                        }
+                   }
+              }
+          }
+       }, {
+         "name" : "reliablewithflowcontrol",
+         "id" : 2,
+         "partialDelivery" : false,
+         "orderedDelivery" : true,
+         "maxAllowableGap": 0,
+         "efcpPolicies" : {
+              "dtpPolicySet" : {
+                "name" : "default",
+                "version" : "0"
+              },
+              "initialATimer" : 0,
+              "dtcpPresent" : true,
+              "dtcpConfiguration" : {
+                   "dtcpPolicySet" : {
+                     "name" : "default",
+                     "version" : "0"
+                   },
+                   "rtxControl" : true,
+                   "rtxControlConfig" : {
+                       "dataRxmsNmax" : 5,
+                       "initialRtxTime" : 200
+                   },
+                   "flowControl" : true,
+                   "flowControlConfig" : {
+                       "rateBased" : false,
+                       "windowBased" : true,
+                       "windowBasedConfig" : {
+                         "maxClosedWindowQueueLength" : 20,
+                         "initialCredit" : 150
+                            }
+                        }
+                  }
+         }
+     },
+     {
+	 "name" : "unreliable",
+        "id" : 3,
+        "partialDelivery": false,
+        "orderedDelivery": true,
+        "efcpPolicies": {
+                "dtpPolicySet" :{
+                        "name" : "default",
+                        "version" : "0"
+                },
+                "initialATimer" : 300,
+                "dtcpPresent": false
+        }
+     }
+     ],
+     "knownIPCProcessAddresses" : [
+{
+    "address": 101,
+    "apInstance": "1",
+    "apName": "gw1.management"
+},
+{
+    "address": 102,
+    "apInstance": "1",
+    "apName": "gw2.management"
+},
+{
+    "address": 103,
+    "apInstance": "1",
+    "apName": "gw3.management"
+},
+{
+    "address": 104,
+    "apInstance": "1",
+    "apName": "gw4.management"
+},
+{
+    "address": 105,
+    "apInstance": "1",
+    "apName": "gw5.management"
+},
+{
+    "address": 106,
+    "apInstance": "1",
+    "apName": "edge1.management"
+},
+{
+    "address": 107,
+    "apInstance": "1",
+    "apName": "edge2.management"
+},
+{
+    "address": 108,
+    "apInstance": "1",
+    "apName": "sdnController.management"
+}],
+        "addressPrefixes" : [ {
+         "addressPrefix" : 0,
+         "organization" : "N.Bourbaki"
+          }, {
+         "addressPrefix" : 16,
+         "organization" : "IRATI"
+      } ],
+     "rmtConfiguration" : {
+        "pffConfiguration" : {
+          "policySet" : {
+            "name" : "default",
+            "version" : "0"
+          }
+        },
+        "policySet" : {
+          "name" : "default",
+          "version" : "1"
+        }
+     },
+     "enrollmentTaskConfiguration" : {
+        "policySet" : {
+           "name" : "default",
+           "version" : "1",
+           "parameters" : [{
+               "name"  : "enrollTimeoutInMs",
+               "value" : "10000"
+             },{
+               "name"  : "watchdogPeriodInMs",
+               "value" : "5000"
+             },{
+               "name"  : "declaredDeadIntervalInMs",
+               "value" : "20000"
+             },{
+               "name"  : "useReliableNFlow",
+               "value" : "false"
+             },{
+               "name"  : "maxEnrollmentRetries",
+               "value" : "2"
+             }]
+        }
+     },
+     "flowAllocatorConfiguration" : {
+         "policySet" : {
+           "name" : "default",
+           "version" : "1"
+          }
+     },
+     "namespaceManagerConfiguration" : {
+         "policySet" : {
+           "name" : "default",
+           "version" : "1"
+           }
+     },
+     "securityManagerConfiguration" : {
+         "policySet" : {
+           "name" : "default",
+           "version" : "1"
+           },
+          "authSDUProtProfiles" : {
+              "default " : {
+                 "authPolicy" : {
+                     "name" : "PSOC_authentication-none",
+                     "version" : "1"
+                  },
+                 "ErrorCheckPolicy" : {
+                                "name" : "CRC32",
+                                "version" : "1"
+                        }
+              }
+           }
+     },
+     "resourceAllocatorConfiguration" : {
+         "pduftgConfiguration" : {
+           "policySet" : {
+             "name" : "default",
+             "version" : "0"
+           }
+         }
+     },
+     "routingConfiguration" : {
+         "policySet" : {
+           "name" : "link-state",
+           "version" : "1",
+           "parameters" : [{
+             "name"  : "objectMaximumAge",
+             "value" : "10000"
+           },{
+		"name": "waitUntilReadCDAP",
+		"value": "5001"
+	   },{
+		"name": "waitUntilError",
+		"value": "5001"
+	   },{
+		"name": "waitUntilPDUFTComputation",
+		"value": "59"		
+	   },{
+		"name": "waitUntilFSODBPropagation",
+		"value": "53"
+	   },{
+		"name": "waitUntilAgreIncrement",
+		"value": "997"
+	   },{
+		"name": "routingAlgorithm",
+		"value": "Dijkstra"
+	}]
+     }
+  }
+}
+
