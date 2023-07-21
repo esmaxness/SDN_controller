@@ -72,6 +72,23 @@ INFO:     Application startup complete.
 
 The example exposes a well-defined REST API. It is possible to validate the REST API by using swagger at http://127.0.0.1:8000/docs.
 
+To validate the connection with the RINA manager, run:
+```
+curl -X 'GET' \
+  'http://127.0.0.1:8000/list_systems' \
+  -H 'accept: application/json'
+```
+
+The RINA manager is going to response with the SDN Controller Management Agent because it is the only management agent register into the SDN Controller.
+```
+[
+  {
+    "portId": "7",
+    "maName": "sdnController-1",
+    "systemId": "1"
+  }
+]
+```
 
 
 
