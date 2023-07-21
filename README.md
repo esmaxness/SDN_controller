@@ -79,7 +79,7 @@ curl -X 'GET' \
   -H 'accept: application/json'
 ```
 
-The RINA manager is going to response with the SDN Controller Management Agent because it is the only management agent register into the SDN Controller.
+The RINA manager is going to response with the SDN Controller Management Agent information because it is the only management agent register into the SDN Controller.
 ```
 [
   {
