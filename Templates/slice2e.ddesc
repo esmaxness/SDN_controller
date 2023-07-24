@@ -1,0 +1,21 @@
+{
+
+  "dif_name" : "slice2",
+  "dif_type" : "normal-ipc",
+  "ipcps" : [ {
+
+    "system_name" : "edge1",
+    "dif_template" : "slice2-terminet.dif",
+    "registrations" : ["10"]
+
+  },{
+    "system_name" : "gw2",
+    "dif_template": "slice2-terminet.dif",
+    "registrations": ["10"],
+    "neighbors" : [{
+		"ipcp_name" : "edge1.slice2",
+		"under_dif" : "10"
+	}]
+  }]
+
+}

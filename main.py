@@ -9,7 +9,7 @@ from rina.manager import RinaManager
 app = FastAPI()
 
 maManager = RinaCoreManager()
-manager = RinaManager('/var/run/nmconsole.sock', '/tmp/DifTemplates') 
+manager = RinaManager('/var/run/nmconsole.sock', '/home/Terminet/DifTemplates') 
 manager.connect()
 
 @app.get("/")

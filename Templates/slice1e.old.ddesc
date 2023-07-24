@@ -1,0 +1,12 @@
+{
+
+  "dif_name" : "slice1",
+  "dif_type" : "normal-ipc",
+  "ipcps" : [ {
+
+    "system_name" : "edge1",
+    "dif_template" : "slice1-terminet.dif",
+    "registrations" : ["10"]
+  }]
+
+}
